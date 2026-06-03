@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpO2 &amp; Heart Rate Monitor | Daksh Shah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--bg2:#0a0a0a;--bg3:#161616;--fg:#fff;--fg2:#aaa;--fg3:#666;--border:rgba(255,255,255,.12);--blue:#3b82f6;--blue2:#60a5fa;--mono:'Space Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5}.grid{position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.032) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.032) 1px,transparent 1px);background-size:60px 60px}
+nav{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid var(--border);background:rgba(0,0,0,.88);backdrop-filter:blur(16px)}a{color:inherit;text-decoration:none}.logo{font-family:var(--mono);font-size:13px;letter-spacing:3px}.back{font-family:var(--mono);font-size:11px;color:var(--fg3);letter-spacing:2px;text-transform:uppercase}.back:hover{color:var(--blue2)}
+main{position:relative;z-index:1;padding:9rem 3rem 5rem;max-width:1180px;margin:0 auto}.eyebrow{font-family:var(--mono);font-size:11px;color:var(--blue);letter-spacing:4px;text-transform:uppercase;margin-bottom:1.5rem}h1{font-size:clamp(3rem,8vw,7rem);line-height:.98;letter-spacing:-3px;margin-bottom:1.5rem}.lead{max-width:760px;font-family:var(--mono);color:var(--fg2);font-size:14px;line-height:2;margin-bottom:3rem}
+.photo-slot{border:1px solid var(--border);background:var(--bg2);min-height:340px;display:grid;place-items:center;margin-bottom:4rem;overflow:hidden}
+.project-photo{width:100%;height:100%;object-fit:contain;display:block}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem}.section{border-top:1px solid var(--border);padding-top:2rem;margin-bottom:3rem}h2{font-size:1.6rem;margin-bottom:1rem}.copy{font-family:var(--mono);font-size:13px;color:var(--fg3);line-height:2}.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;border:1px solid var(--border);color:var(--blue2);padding:5px 10px;background:rgba(59,130,246,.08)}.list{display:grid;gap:12px}.item{font-family:var(--mono);font-size:12px;color:var(--fg2);padding:1rem;border:1px solid var(--border);background:var(--bg2)}.next{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;border-top:1px solid var(--border);padding-top:2rem;font-family:var(--mono);font-size:12px;color:var(--fg3)}
+@media(max-width:800px){nav,main{padding-left:1.5rem;padding-right:1.5rem}.layout{grid-template-columns:1fr}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<nav><a class="logo" href="daksh-portfolio.html">DS</a><a class="back" href="daksh-portfolio.html#projects">&#8592; Back to Projects</a></nav>
+<main>
+  <div class="eyebrow">03 &mdash; Embedded Systems</div>
+  <h1>SpO2 &amp; Heart Rate<br>Monitor</h1>
+  <p class="lead">A real-time blood oxygen and heart rate monitor using Arduino Uno, a MAX30102 pulse oximetry sensor, and an OLED display.</p>
+  <div class="photo-slot">
+    <img class="project-photo" src="spo2.jpeg" alt="SpO2 and heart rate monitor">
+  </div>
+  <div class="layout">
+    <div>
+      <section class="section"><h2>Overview</h2><p class="copy">This project explores healthcare hardware and signal processing through a compact pulse oximeter prototype. The MAX30102 sensor captures optical readings, Arduino Uno processes the signal, and live SpO2 plus BPM values are shown on an OLED screen.</p></section>
+      <section class="section"><h2>Core Features</h2><div class="list"><div class="item">Real-time SpO2 and heart rate readings.</div><div class="item">Arduino Uno integration with MAX30102 sensor.</div><div class="item">OLED output for live display.</div><div class="item">Custom C++ logic for core BPM detection.</div></div></section>
+    </div>
+    <aside>
+      <section class="section"><h2>Stack</h2><div class="tags"><span class="tag">Arduino</span><span class="tag">C++</span><span class="tag">MAX30102</span><span class="tag">OLED</span><span class="tag">Embedded</span></div></section>
+      <section class="section"><h2>Focus</h2><p class="copy">Embedded programming, sensor data processing, OLED display output, and practical hardware prototyping.</p></section>
+    </aside>
+  </div>
+  <div class="next"><a href="net-zero-campus.html">&#8592; Net Zero Campus</a><a href="daksh-portfolio.html#projects">All Projects &#8594;</a></div>
+</main>
+</body>
+</html>

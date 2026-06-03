@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AstroSweepers | Daksh Shah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--bg2:#0a0a0a;--bg3:#161616;--fg:#fff;--fg2:#aaa;--fg3:#666;--border:rgba(255,255,255,.12);--blue:#3b82f6;--blue2:#60a5fa;--mono:'Space Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5}
+.grid{position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.032) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.032) 1px,transparent 1px);background-size:60px 60px}
+nav{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid var(--border);background:rgba(0,0,0,.88);backdrop-filter:blur(16px)}
+a{color:inherit;text-decoration:none}.logo{font-family:var(--mono);font-size:13px;letter-spacing:3px}.back{font-family:var(--mono);font-size:11px;color:var(--fg3);letter-spacing:2px;text-transform:uppercase}.back:hover{color:var(--blue2)}
+main{position:relative;z-index:1;padding:9rem 3rem 5rem;max-width:1180px;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:11px;color:var(--blue);letter-spacing:4px;text-transform:uppercase;margin-bottom:1.5rem}
+h1{font-size:clamp(3.2rem,9vw,8rem);line-height:.95;letter-spacing:-3px;margin-bottom:1.5rem}
+.lead{max-width:760px;font-family:var(--mono);color:var(--fg2);font-size:14px;line-height:2;margin-bottom:3rem}
+.hero-panel{min-height:320px;border:1px solid var(--border);background:radial-gradient(circle at 70% 30%,rgba(59,130,246,.18),transparent 38%),var(--bg2);display:grid;place-items:center;margin-bottom:4rem;overflow:hidden}
+.orbit{width:min(520px,80vw);aspect-ratio:1;border:1px solid rgba(255,255,255,.16);border-radius:50%;position:relative}
+.orbit::before,.orbit::after{content:'';position:absolute;border:1px solid rgba(59,130,246,.35);border-radius:50%;inset:18%;transform:rotate(24deg)}.orbit::after{inset:35%;background:rgba(255,255,255,.04)}
+.sat{position:absolute;top:18%;left:58%;width:80px;height:34px;background:#fff;box-shadow:0 0 30px rgba(255,255,255,.25)}.sat::before,.sat::after{content:'';position:absolute;top:7px;width:58px;height:20px;border:1px solid var(--blue);background:rgba(59,130,246,.2)}.sat::before{right:86px}.sat::after{left:86px}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem}.section{border-top:1px solid var(--border);padding-top:2rem;margin-bottom:3rem}
+h2{font-size:1.6rem;margin-bottom:1rem}.copy{font-family:var(--mono);font-size:13px;color:var(--fg3);line-height:2}
+.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;border:1px solid var(--border);color:var(--blue2);padding:5px 10px;background:rgba(59,130,246,.08)}
+.list{display:grid;gap:12px}.item{font-family:var(--mono);font-size:12px;color:var(--fg2);padding:1rem;border:1px solid var(--border);background:var(--bg2)}
+.next{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;border-top:1px solid var(--border);padding-top:2rem;font-family:var(--mono);font-size:12px;color:var(--fg3)}
+@media(max-width:800px){nav,main{padding-left:1.5rem;padding-right:1.5rem}.layout{grid-template-columns:1fr}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<nav><a class="logo" href="daksh-portfolio.html">DS</a><a class="back" href="daksh-portfolio.html#projects">&#8592; Back to Projects</a></nav>
+<main>
+  <div class="eyebrow">01 &mdash; Space Tech</div>
+  <h1>AstroSweepers</h1>
+  <p class="lead">A reusable debris-clearing satellite concept that captures, processes, and recycles orbital debris in low Earth orbit.</p>
+  <div class="hero-panel"><div class="orbit"><div class="sat"></div></div></div>
+  <div class="layout">
+    <div>
+      <section class="section"><h2>Overview</h2><p class="copy">AstroSweepers is designed around a simple idea: orbital debris should not only be removed, it should be converted into useful mission material. The satellite uses high-resolution imaging and AI-assisted navigation to detect debris, robotic arms to capture it, and an onboard processing chamber to separate recyclable material.</p></section>
+      <section class="section"><h2>Core Features</h2><div class="list"><div class="item">AI-assisted debris detection and navigation.</div><div class="item">Robotic capture arms for controlled collection.</div><div class="item">Solar-powered heat chamber for metallic debris processing.</div><div class="item">Reusable mission model where recycled metals can support propulsion.</div></div></section>
+    </div>
+    <aside>
+      <section class="section"><h2>Stack</h2><div class="tags"><span class="tag">AI/ML</span><span class="tag">Robotics</span><span class="tag">Space Tech</span><span class="tag">Propulsion</span><span class="tag">Solar Power</span></div></section>
+      <section class="section"><h2>Focus</h2><p class="copy">Concept design, system architecture, sustainability, and autonomous operation in low Earth orbit.</p></section>
+    </aside>
+  </div>
+  <div class="next"><a href="daksh-portfolio.html#projects">&#8592; All Projects</a><a href="net-zero-campus.html">Next: Net Zero Campus &#8594;</a></div>
+</main>
+</body>
+</html>

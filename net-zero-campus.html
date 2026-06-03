@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net Zero Campus | Daksh Shah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--bg2:#0a0a0a;--bg3:#161616;--fg:#fff;--fg2:#aaa;--fg3:#666;--border:rgba(255,255,255,.12);--blue:#3b82f6;--blue2:#60a5fa;--mono:'Space Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5}.grid{position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.032) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.032) 1px,transparent 1px);background-size:60px 60px}
+nav{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid var(--border);background:rgba(0,0,0,.88);backdrop-filter:blur(16px)}a{color:inherit;text-decoration:none}.logo{font-family:var(--mono);font-size:13px;letter-spacing:3px}.back{font-family:var(--mono);font-size:11px;color:var(--fg3);letter-spacing:2px;text-transform:uppercase}.back:hover{color:var(--blue2)}
+main{position:relative;z-index:1;padding:9rem 3rem 5rem;max-width:1180px;margin:0 auto}.eyebrow{font-family:var(--mono);font-size:11px;color:var(--blue);letter-spacing:4px;text-transform:uppercase;margin-bottom:1.5rem}h1{font-size:clamp(3.2rem,9vw,8rem);line-height:.95;letter-spacing:-3px;margin-bottom:1.5rem}.lead{max-width:760px;font-family:var(--mono);color:var(--fg2);font-size:14px;line-height:2;margin-bottom:3rem}
+.dash{border:1px solid var(--border);background:var(--bg2);padding:1.2rem;margin-bottom:4rem}.dashbar{height:28px;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;gap:6px;align-items:center;padding:0 10px}.dot{width:7px;height:7px;border-radius:50%;background:var(--blue)}.dashgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;padding:1rem}.panel{min-height:150px;border:1px solid var(--border);background:#000;padding:1rem}.line{height:8px;background:rgba(255,255,255,.08);margin-bottom:12px}.line.blue{background:rgba(59,130,246,.45);width:70%}.metric{font-size:2.4rem;font-weight:800}.metric span{color:var(--blue)}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem}.section{border-top:1px solid var(--border);padding-top:2rem;margin-bottom:3rem}h2{font-size:1.6rem;margin-bottom:1rem}.copy{font-family:var(--mono);font-size:13px;color:var(--fg3);line-height:2}.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;border:1px solid var(--border);color:var(--blue2);padding:5px 10px;background:rgba(59,130,246,.08)}.list{display:grid;gap:12px}.item{font-family:var(--mono);font-size:12px;color:var(--fg2);padding:1rem;border:1px solid var(--border);background:var(--bg2)}.next{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;border-top:1px solid var(--border);padding-top:2rem;font-family:var(--mono);font-size:12px;color:var(--fg3)}
+@media(max-width:800px){nav,main{padding-left:1.5rem;padding-right:1.5rem}.layout,.dashgrid{grid-template-columns:1fr}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<nav><a class="logo" href="daksh-portfolio.html">DS</a><a class="back" href="daksh-portfolio.html#projects">&#8592; Back to Projects</a></nav>
+<main>
+  <div class="eyebrow">02 &mdash; Sustainable Systems</div>
+  <h1>Net Zero<br>Campus</h1>
+  <p class="lead">An AI-enabled dashboard concept that connects IoT sensors, solar data, waste management, and carbon reporting into one operating view.</p>
+  <div class="dash"><div class="dashbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="dashgrid"><div class="panel"><div class="line blue"></div><div class="line" style="width:88%"></div><div class="line" style="width:64%"></div><div class="line" style="width:76%"></div></div><div class="panel"><div class="metric">42<span>%</span></div><p class="copy">Projected energy optimization</p></div></div></div>
+  <div class="layout">
+    <div>
+      <section class="section"><h2>Overview</h2><p class="copy">Net Zero Campus brings campus sustainability data into a single dashboard. It is planned to ingest sensor readings, solar production, utility usage, and waste logs, then use predictive analytics to forecast demand and suggest or trigger operational improvements.</p></section>
+      <section class="section"><h2>Core Features</h2><div class="list"><div class="item">Unified dashboard for energy, waste, solar, and carbon data.</div><div class="item">Predictive analytics for energy demand and waste trends.</div><div class="item">Automated eco-alerts and recycling schedule suggestions.</div><div class="item">Campus-level carbon footprint tracking.</div></div></section>
+    </div>
+    <aside>
+      <section class="section"><h2>Stack</h2><div class="tags"><span class="tag">React.js</span><span class="tag">TensorFlow</span><span class="tag">IoT</span><span class="tag">Firebase</span><span class="tag">Analytics</span></div></section>
+      <section class="section"><h2>Focus</h2><p class="copy">Dashboard UX, real-time data, sustainability automation, and predictive decision support.</p></section>
+    </aside>
+  </div>
+  <div class="next"><a href="astrosweepers.html">&#8592; AstroSweepers</a><a href="spo2-heart-rate-monitor.html">Next: SpO2 Monitor &#8594;</a></div>
+</main>
+</body>
+</html>
