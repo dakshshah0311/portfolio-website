@@ -9,8 +9,13 @@
 <style>
 :root{--bg:#000;--bg2:#0a0a0a;--bg3:#161616;--fg:#fff;--fg2:#aaa;--fg3:#666;--border:rgba(255,255,255,.12);--blue:#3b82f6;--blue2:#60a5fa;--mono:'Space Mono',monospace;--sans:'Syne',sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5;cursor:none}
+a,button{cursor:none}
 .grid{position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.032) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.032) 1px,transparent 1px);background-size:60px 60px}
+#cur{position:fixed;width:10px;height:10px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s}
+#cur-ring{position:fixed;width:32px;height:32px;border:1.5px solid rgba(59,130,246,.55);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s}
+#cur.big{width:18px;height:18px}
+#cur-ring.big{width:52px;height:52px;border-color:rgba(59,130,246,.2)}
 nav{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid var(--border);background:rgba(0,0,0,.88);backdrop-filter:blur(16px)}
 a{color:inherit;text-decoration:none}.logo{font-family:var(--mono);font-size:13px;letter-spacing:3px}.back{font-family:var(--mono);font-size:11px;color:var(--fg3);letter-spacing:2px;text-transform:uppercase}.back:hover{color:var(--blue2)}
 main{position:relative;z-index:1;padding:9rem 3rem 5rem;max-width:1180px;margin:0 auto}
@@ -18,6 +23,12 @@ main{position:relative;z-index:1;padding:9rem 3rem 5rem;max-width:1180px;margin:
 h1{font-size:clamp(3.2rem,9vw,8rem);line-height:.95;letter-spacing:-3px;margin-bottom:1.5rem}
 .lead{max-width:760px;font-family:var(--mono);color:var(--fg2);font-size:14px;line-height:2;margin-bottom:3rem}
 .hero-panel{min-height:320px;border:1px solid var(--border);background:radial-gradient(circle at 70% 30%,rgba(59,130,246,.18),transparent 38%),var(--bg2);display:grid;place-items:center;margin-bottom:4rem;overflow:hidden}
+.project-photo{
+  width:min(100%,760px);
+  max-height:420px;
+  object-fit:contain;
+  display:block;
+}
 .orbit{width:min(520px,80vw);aspect-ratio:1;border:1px solid rgba(255,255,255,.16);border-radius:50%;position:relative}
 .orbit::before,.orbit::after{content:'';position:absolute;border:1px solid rgba(59,130,246,.35);border-radius:50%;inset:18%;transform:rotate(24deg)}.orbit::after{inset:35%;background:rgba(255,255,255,.04)}
 .sat{position:absolute;top:18%;left:58%;width:80px;height:34px;background:#fff;box-shadow:0 0 30px rgba(255,255,255,.25)}.sat::before,.sat::after{content:'';position:absolute;top:7px;width:58px;height:20px;border:1px solid var(--blue);background:rgba(59,130,246,.2)}.sat::before{right:86px}.sat::after{left:86px}
@@ -31,12 +42,16 @@ h2{font-size:1.6rem;margin-bottom:1rem}.copy{font-family:var(--mono);font-size:1
 </head>
 <body>
 <div class="grid"></div>
+<div id="cur"></div>
+<div id="cur-ring"></div>
 <nav><a class="logo" href="daksh-portfolio.html">DS</a><a class="back" href="daksh-portfolio.html#projects">&#8592; Back to Projects</a></nav>
 <main>
   <div class="eyebrow">01 &mdash; Space Tech</div>
   <h1>AstroSweepers</h1>
   <p class="lead">A reusable debris-clearing satellite concept that captures, processes, and recycles orbital debris in low Earth orbit.</p>
-  <div class="hero-panel"><div class="orbit"><div class="sat"></div></div></div>
+  <div class="hero-panel">
+  <img class="project-photo" src="Picture1.png" alt="AstroSweepers project photo">
+</div>
   <div class="layout">
     <div>
       <section class="section"><h2>Overview</h2><p class="copy">AstroSweepers is designed around a simple idea: orbital debris should not only be removed, it should be converted into useful mission material. The satellite uses high-resolution imaging and AI-assisted navigation to detect debris, robotic arms to capture it, and an onboard processing chamber to separate recyclable material.</p></section>
@@ -49,5 +64,20 @@ h2{font-size:1.6rem;margin-bottom:1rem}.copy{font-family:var(--mono);font-size:1
   </div>
   <div class="next"><a href="daksh-portfolio.html#projects">&#8592; All Projects</a><a href="net-zero-campus.html">Next: Net Zero Campus &#8594;</a></div>
 </main>
+<script>
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+let mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+(function loop(){
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+  rx+=(mx-rx)*.1;ry+=(my-ry)*.1;
+  ring.style.left=rx+'px';ring.style.top=ry+'px';
+  requestAnimationFrame(loop);
+})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('big');ring.classList.add('big')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('big');ring.classList.remove('big')});
+});
+</script>
 </body>
 </html>
